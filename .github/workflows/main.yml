@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch
+
+jobs:
+  build_and_deploy:
+    env:
+        resourceGroup: CloudServiceExtendedSupportTestDeployRG
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: Azure/arm-deploy@v1
+        with:
+          resourceGroupName: "$resourceGroup"
+          template: .azure\infrastructure\arm.json
+          parameters: .azure\infrastructure\arm.parameters.json
