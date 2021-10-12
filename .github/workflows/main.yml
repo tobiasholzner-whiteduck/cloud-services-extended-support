@@ -4,7 +4,7 @@ on:
 jobs:
   build_and_deploy:
     env:
-        resourceGroup: CloudServiceExtendedSupportTestDeployRG
+        resourceGroup: rg-wd-schooling
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -15,4 +15,4 @@ jobs:
         with:
           resourceGroupName: "$resourceGroup"
           template: .azure\infrastructure\arm.json
-          parameters: .azure\infrastructure\arm.parameters.json
+          parameters: .azure\infrastructure\parameter.arm.json
