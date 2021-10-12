@@ -3,8 +3,6 @@ on:
 
 jobs:
   build_and_deploy:
-    env:
-        resourceGroup: rg-wd-schooling
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -13,6 +11,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: Azure/arm-deploy@v1
         with:
-          resourceGroupName: "$resourceGroup"
+          resourceGroupName: ${{ secrets.RESOURCEGROUP }}
           template: .azure\infrastructure\arm.json
           parameters: .azure\infrastructure\parameter.arm.json
