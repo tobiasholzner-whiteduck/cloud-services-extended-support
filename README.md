@@ -1,5 +1,7 @@
 # Cloud Service extended support Azure Deployment (IaC) Test
 
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftobiasholzner-whiteduck%2Fcloud-services-extended-support%2Fdev%2F.azure%2Finfrastructure%2Farm.json)
+
 ## Overview
 
 This repository is used to test the Deployment process of cloud service extended support with IaC
